@@ -27,12 +27,12 @@ TARGET_NO_BOOTLOADER := true
 
 # Inline kernel
 KERNEL_TOOLCHAIN_PREFIX:=$(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-linux-androideabi-4.9/bin/arm-linux-androideabi-
-TARGET_KERNEL_CONFIG := gee_defconfig	
-TARGET_KERNEL_SOURCE := kernel/lge/geehrc
+TARGET_KERNEL_CONFIG := geeb_defconfig	
+TARGET_KERNEL_SOURCE := kernel/lge/geeb
 
 BOARD_KERNEL_BASE := 0x80200000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=geehrc lpj=67677 user_debug=31 androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.hardware=geeb lpj=67677 user_debug=31 androidboot.selinux=permissive
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01600000
 
 BOARD_USES_ALSA_AUDIO:= true
@@ -46,11 +46,11 @@ BLUETOOTH_HCI_USE_MCT := true
 
 TARGET_NO_RADIOIMAGE := true
 TARGET_BOARD_PLATFORM := msm8960
-TARGET_BOOTLOADER_BOARD_NAME := GEEHRC
-TARGET_BOOTLOADER_NAME=geehrc
-TARGET_BOARD_INFO_FILE := device/lge/geehrc/board-info.txt
+TARGET_BOOTLOADER_BOARD_NAME := GEEB
+TARGET_BOOTLOADER_NAME=geeb
+TARGET_BOARD_INFO_FILE := device/lge/geeb/board-info.txt
 
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/geehrc/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/geeb/bluetooth
 
 # FIXME: HOSTAPD-derived wifi driver
 BOARD_HAS_QCOM_WLAN := true
@@ -63,7 +63,7 @@ BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_STA := "sta"
 WIFI_DRIVER_FW_PATH_AP  := "ap"
 
-BOARD_EGL_CFG := device/lge/geehrc/egl.cfg
+BOARD_EGL_CFG := device/lge/geeb/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -88,7 +88,7 @@ endif
 WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB = device/lge/geehrc/fstab.geehrc
+TARGET_RECOVERY_FSTAB = device/lge/geeb/fstab.geeb
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
@@ -104,16 +104,18 @@ BOARD_USES_SECURE_SERVICES := true
 BOARD_USES_EXTRA_THERMAL_SENSOR := true
 BOARD_USES_CAMERA_FAST_AUTOFOCUS := true
 
-BOARD_HAL_STATIC_LIBRARIES := libdumpstate.geehrc
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.geeb
 
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := $(TARGET_BOARD_PLATFORM)
 BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 TARGET_NO_RPC := true
 
 BOARD_SEPOLICY_DIRS += \
-       device/lge/geehrc/sepolicy
+       device/lge/geeb/sepolicy
 
 BOARD_CHARGER_ENABLE_SUSPEND := true
+
+USE_DEVICE_SPECIFIC_CAMERA:= true
 
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
@@ -134,7 +136,6 @@ TW_MAX_BRIGHTNESS := 250
 TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-BOARD_HAS_NO_REAL_SDCARD := true
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 TW_INCLUDE_JB_CRYPTO := true
 TW_FLASH_FROM_STORAGE := true
@@ -142,7 +143,7 @@ TW_NO_USB_STORAGE := true
 
 TW_INTERNAL_STORAGE_PATH := "/data/media"
 TW_INTERNAL_STORAGE_MOUNT_POINT := "data"
-TW_EXTERNAL_STORAGE_PATH := "/usb-otg"
-TW_EXTERNAL_STORAGE_MOUNT_POINT := "usb-otg"
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
 
--include vendor/lge/geehrc/BoardConfigVendor.mk
+-include vendor/lge/geeb/BoardConfigVendor.mk

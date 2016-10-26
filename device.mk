@@ -14,14 +14,14 @@
 # limitations under the License.
 #
 
-# This file includes all definitions that apply to ALL geehrc devices, and
-# are also specific to geehrc devices
+# This file includes all definitions that apply to ALL geeb devices, and
+# are also specific to geeb devices
 #
 # Everything in this directory will become public
 
-DEVICE_PACKAGE_OVERLAYS := device/lge/geehrc/overlay
+DEVICE_PACKAGE_OVERLAYS := device/lge/geeb/overlay
 
-#LOCAL_KERNEL := device/lge/geehrc/kernel
+#LOCAL_KERNEL := device/lge/geeb/kernel
 
 #PRODUCT_COPY_FILES := \
 #    $(LOCAL_KERNEL):kernel
@@ -41,47 +41,50 @@ PRODUCT_PACKAGES := \
     wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
-    lights.geehrc
+    lights.geeb
+
+PRODUCT_PACKAGES += \
+    camera.geeb
 
 PRODUCT_PACKAGES += \
     charger_res_images
 
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
-    device/lge/geehrc/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
-    device/lge/geehrc/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
-    device/lge/geehrc/init.geehrc.wifi.sh:system/bin/init.geehrc.wifi.sh
+    device/lge/geeb/WCNSS_cfg.dat:system/vendor/firmware/wlan/prima/WCNSS_cfg.dat \
+    device/lge/geeb/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
+    device/lge/geeb/WCNSS_qcom_wlan_nv.bin:system/etc/wifi/WCNSS_qcom_wlan_nv.bin \
+    device/lge/geeb/init.geeb.wifi.sh:system/bin/init.geeb.wifi.sh
 
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/fetch-swv:system/bin/fetch-swv
+    device/lge/geeb/fetch-swv:system/bin/fetch-swv
 
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/init.geehrc.rc:root/init.geehrc.rc \
-    device/lge/geehrc/init.geehrc.usb.rc:root/init.geehrc.usb.rc \
-    device/lge/geehrc/fstab.geehrc:root/fstab.geehrc \
-    device/lge/geehrc/ueventd.geehrc.rc:root/ueventd.geehrc.rc \
-    device/lge/geehrc/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
-    device/lge/geehrc/media_profiles.xml:system/etc/media_profiles.xml \
+    device/lge/geeb/init.geeb.rc:root/init.geeb.rc \
+    device/lge/geeb/init.geeb.usb.rc:root/init.geeb.usb.rc \
+    device/lge/geeb/fstab.geeb:root/fstab.geeb \
+    device/lge/geeb/ueventd.geeb.rc:root/ueventd.geeb.rc \
+    device/lge/geeb/recovery/twrp.fstab:recovery/root/etc/twrp.fstab \
+    device/lge/geeb/media_profiles.xml:system/etc/media_profiles.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml \
-    device/lge/geehrc/media_codecs.xml:system/etc/media_codecs.xml \
-    device/lge/geehrc/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
+    device/lge/geeb/media_codecs.xml:system/etc/media_codecs.xml \
+    device/lge/geeb/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
-    device/lge/geehrc/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-    device/lge/geehrc/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-    device/lge/geehrc/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
-    device/lge/geehrc/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
-    device/lge/geehrc/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
-    device/lge/geehrc/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
-    device/lge/geehrc/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
+    device/lge/geeb/apq8064-tabla-snd-card_Button_Jack.kl:system/usr/keylayout/apq8064-tabla-snd-card_Button_Jack.kl \
+    device/lge/geeb/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+    device/lge/geeb/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
+    device/lge/geeb/keypad_8064.kl:system/usr/keylayout/keypad_8064.kl \
+    device/lge/geeb/apq8064-tabla-snd-card_Button_Jack.kcm:system/usr/keychars/apq8064-tabla-snd-card_Button_Jack.kcm \
+    device/lge/geeb/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
+    device/lge/geeb/keypad_8064.kcm:system/usr/keychars/keypad_8064.kcm \
+    device/lge/geeb/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/touch_dev.idc:system/usr/idc/touch_dev.idc
+    device/lge/geeb/touch_dev.idc:system/usr/idc/touch_dev.idc
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -118,7 +121,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
-    device/lge/geehrc/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
+    device/lge/geeb/nfc/libnfc-brcm.conf:system/etc/libnfc-brcm.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196608
@@ -188,15 +191,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += libqcomvoiceprocessing
 
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/audio_effects.conf:system/vendor/etc/audio_effects.conf \
-    device/lge/geehrc/audio_policy.conf:system/etc/audio_policy.conf \
-    device/lge/geehrc/mixer_paths.xml:system/etc/mixer_paths.xml
+    device/lge/geeb/audio_effects.conf:system/vendor/etc/audio_effects.conf \
+    device/lge/geeb/audio_policy.conf:system/etc/audio_policy.conf \
+    device/lge/geeb/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_PACKAGES += \
     hci_qcomm_init
 
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/init.geehrc.bt.sh:system/bin/init.geehrc.bt.sh
+    device/lge/geeb/init.geeb.bt.sh:system/bin/init.geeb.bt.sh
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.bt.hci_transport=smd
@@ -214,7 +217,7 @@ endif
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-    device/lge/geehrc/gps.conf:system/etc/gps.conf
+    device/lge/geeb/gps.conf:system/etc/gps.conf
 
 # GPS
 PRODUCT_PACKAGES += \
